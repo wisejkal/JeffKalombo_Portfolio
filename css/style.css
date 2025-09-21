@@ -691,6 +691,30 @@ span {
 
 /* Mobile friendly */
 
+@media only screen and (orientation: landscape) {
+  .home,
+  .about,
+  .portfolio,
+  .contact {
+    flex-direction: row; /* or column depending on layout */
+    padding: 2rem;
+    gap: 1rem;
+  }
+
+  .home-img img {
+    max-width: 40vw;
+  }
+
+  .home-content h1 {
+    font-size: 4rem;
+  }
+
+  .portfolio-container .portfolio-box {
+    width: 90vw;
+    max-width: 100%;
+  }
+}
+
 /* Responsive font scaling */
 @media (max-width: 768px) {
   html {
