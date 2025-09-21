@@ -749,7 +749,8 @@ span {
   }
 
   .home-img img {
-    width: 60vw;
+    /* width: 60vw; */
+    width: 100%;
     margin-left: 0;
     max-width: 300px;
     margin-top: 2rem;
