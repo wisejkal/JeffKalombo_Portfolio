@@ -99,6 +99,7 @@ body {
 
 section {
     min-height: 100vh;
+    width : 100%;
     padding: 12rem 9% 2rem;
 }
 
@@ -691,30 +692,6 @@ span {
 
 /* Mobile friendly */
 
-@media only screen and (orientation: landscape) {
-  .home,
-  .about,
-  .portfolio,
-  .contact {
-    flex-direction: row; /* or column depending on layout */
-    padding: 2rem;
-    gap: 1rem;
-  }
-
-  .home-img img {
-    max-width: 40vw;
-  }
-
-  .home-content h1 {
-    font-size: 4rem;
-  }
-
-  .portfolio-container .portfolio-box {
-    width: 90vw;
-    max-width: 100%;
-  }
-}
-
 /* Responsive font scaling */
 @media (max-width: 768px) {
   html {
@@ -775,8 +752,8 @@ span {
   .home-img img {
     /* width: 60vw; */
     width: 100%;
-    margin-left: 2rem;
-    max-width: min(300px, 100%);
+    margin-left: 0;
+    max-width: 300px;
     margin-top: 2rem;
   }
 
@@ -847,7 +824,7 @@ span {
   }
 
   .contact form .input-box input {
-    width: 100% !important;
+    width: 100%;
     margin: .7rem 0;
   }
 
