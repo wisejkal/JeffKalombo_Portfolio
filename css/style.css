@@ -30,6 +30,7 @@ html {
 body {
     background: var(--bgd-color);
     color: var(--txt-color);
+    /* overflow-x: hidden; */
 }
 
 .header {
@@ -37,7 +38,7 @@ body {
     top: 0;
     left: 0;
     width: 100%;
-    padding: 2rem 9%;
+    padding: 2rem 10%;
     background: var(--bgd-color);
     display: flex;
     justify-content: right;
@@ -57,27 +58,29 @@ body {
 .logo {
     background-color: var(--scd-bgd-color);
 }
+
+
 .navbar {
-    position: absolute;
-    top: 80%;
-    left: 0;
-    width: 100%;
-    padding: 1rem 3%;
-    background: var(--bgd-color);
-    border-top: .1rem solid rgba(0, 0, 0, .2);
-    box-shadow: 0 .5rem 1rem rgba(252, 250, 250, 0.527);
-    border-color: rgb(254, 255, 255);
+  position: absolute;
+  top: 80%;
+  left: 0;
+  width: 100%;
+  padding: 1rem 3%;
+  background: var(--bgd-color);
+  border-top: 0.1rem solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 0.5rem 1rem rgba(252, 250, 250, 0.527);
+  flex-direction: column;
 } 
 
 .navbar.active {
-    display: block;
+    display: flex;
 }
 
 .navbar a {
     font-size: 1.7rem;
     color: var(--txt-color);
     margin-left: 4rem;
-    transition: .3s;
+    transition: 0.3s;
 
 }
 
@@ -94,6 +97,7 @@ body {
     font-size: 3.6rem;
     color: var(--txt-color);
     display: none;
+    cursor: pointer;
 
 }
 
@@ -107,6 +111,7 @@ section {
     justify-content: center;
     align-items: center;
     gap: 20rem;
+    flex-wrap: wrap;
 }
 
 .home-content h3 {
@@ -133,11 +138,13 @@ span {
 }
 
 .home-img img {
-    width: 28vw;
-    box-shadow: 0 0 1rem var(--my-color);
-    border: .2rem solid var(--my-color);
-    border-radius: 100%;
-    animation: floatImage 4s ease-in-out infinite;
+  width: 28vw;
+  max-width: 100%;
+  height: auto;
+  box-shadow: 0 0 1rem var(--my-color);
+  border: 0.2rem solid var(--my-color);
+  border-radius: 100%;
+  animation: floatImage 4s ease-in-out infinite;
 }
 
 @keyframes floatImage {
@@ -330,14 +337,10 @@ span {
 }
 
 .skills-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 2rem;
-   
 }
-
 
 .skills-container .skills-box {
     flex: 1 1 20rem;
@@ -401,6 +404,13 @@ span {
     width: 50rem;
     font-size: 8rem;
    
+}
+
+.portfolio-box video,
+.portfolio-box img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
 }
 
 .portfolio-box img {
@@ -697,9 +707,21 @@ span {
     font-size: 56%; /* slightly smaller base font */
   }
 
+  .logo {
+    font-size: 2rem;
+  }
+
+  #menu-icon {
+    font-size: 3rem;
+  }
+
   .header {
     padding: 1.5rem 5%;
     justify-content: space-between;
+  }
+
+   section {
+    padding: 8rem 3% 2rem;
   }
 
   #menu-icon {
@@ -749,8 +771,7 @@ span {
   }
 
   .home-img img {
-    /* width: 60vw; */
-    width: 100%;
+   width: 60vw;
     margin-left: 0;
     max-width: 300px;
     margin-top: 2rem;
@@ -849,6 +870,51 @@ span {
   .footer-iconTop a i {
     font-size: 2rem;
   }
+
+  .portfolio-container .portfolio-box {
+        width: 100%;
+        max-width: 500px;
+        height: auto;
+        font-size: 2.5rem;
+        margin: 0 auto;
+    }
+
+    .portfolio h2 {
+        font-size: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    .portfolio-layer h4 {
+        font-size: 2.2rem;
+    }
+
+    .portfolio-layer p {
+        font-size: 1.4rem;
+        padding: 0 1rem;
+    }
+
+    .portfolio-layer a {
+        width: 4rem;
+        height: 4rem;
+    }
+
+ .portfolio-container {
+        grid-template-columns: 1fr;
+    }
+
+     .portfolio-box video {
+       justify-content: center;
+       opacity: 1; /* Always visible on mobile */
+       pointer-events: auto; /* Allow interaction if needed */
+       height: auto;
+        width: 100%;
+        max-width: 100%;
+        font-size: 4rem;
+  }
+
+  .portfolio-box:hover .portfolio-video {
+    opacity: 1; /* Ensure consistency on mobile even if hover is triggered */
+  }
 }
 
 /* Extra small phones */
@@ -883,59 +949,22 @@ span {
 @media (max-width: 1024px) {
     .portfolio-container {
         grid-template-columns: repeat(2, 1fr);
-        gap: 2rem;
+        /* gap: 2rem; */
     }
 }
+   
 
 @media (max-width: 768px) {
-    .portfolio-container {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-    }
-
-    .portfolio h2 {
-        font-size: 2rem;
-        margin-bottom: 2rem;
-    }
-
-    .portfolio-layer h4 {
-        font-size: 2.2rem;
-    }
-
-    .portfolio-layer p {
-        font-size: 1.4rem;
-        padding: 0 1rem;
-    }
-
-    .portfolio-layer a {
-        width: 4rem;
-        height: 4rem;
-    }
-  }
-  /* Mobile adjustments */
-@media (max-width: 768px) {
-    .portfolio-container .portfolio-box {
-        height: auto;
-        width: 100%;
-        max-width: 100%;
-        font-size: 4rem;
-    }
-}
-
-/* Mobile-specific adjustments */
-@media (max-width: 768px) {
-  .portfolio-box video {
-       justify-content: center;
-       opacity: 1; /* Always visible on mobile */
-       pointer-events: auto; /* Allow interaction if needed */
-       height: auto;
-        width: 100%;
-        max-width: 100%;
-        font-size: 4rem;
+  .header {
+    padding: 1rem 5%;
   }
 
-  .portfolio-box:hover .portfolio-video {
-    opacity: 1; /* Ensure consistency on mobile even if hover is triggered */
+  .logo {
+    font-size: 2rem;
+  }
+
+  #menu-icon {
+    font-size: 3rem;
   }
 }
 
@@ -973,4 +1002,34 @@ span {
     font-size: 1.2rem;
     padding: 12px 15px;
   }
+}
+
+/* Universal media queries for extreme small screens */
+@media (max-width: 360px) {
+  .home-content h1 {
+    font-size: 2.6rem;
+  }
+
+  .skills-box h3 {
+    font-size: 1.8rem;
+  }
+
+  .skills-box ul {
+    font-size: 1.4rem;
+  }
+
+  .about-content p,
+  .portfolio-layer p {
+    font-size: 1.2rem;
+  }
+
+  .btn {
+    font-size: 1.2rem;
+    padding: 0.8rem 2rem;
+  }
+}
+@media (max-width: 1024px) {
+  .portfolio-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
