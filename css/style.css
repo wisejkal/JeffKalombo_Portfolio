@@ -1212,6 +1212,8 @@ span {
   .portfolio-container {
     grid-template-columns: 1fr 1fr;
     gap: 1.5rem;
+     width: 100vw;
+    overflow-x: hidden;
   }
 
   .portfolio-box {
