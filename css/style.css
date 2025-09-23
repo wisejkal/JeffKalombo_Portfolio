@@ -1106,6 +1106,7 @@ span {
 /* mobile landscape height */
 @media screen and (orientation: landscape) and (max-width: 768px) {
   section {
+    width: 100%; /* */
     min-height: 100dvh; /* Use dynamic viewport height */
     padding: 8rem 5% 2rem;
   }
