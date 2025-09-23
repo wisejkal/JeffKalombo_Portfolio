@@ -386,12 +386,12 @@ span {
   padding: 0 1rem;
 }
 
-.skills-box {
+/* .skills-box {
   flex: 1 1 240px;
   max-width: 100%;
-}
+} */
 
-/* .skills-container .skills-box {
+.skills-container .skills-box {
     flex: 1 1 20rem;
     background: var(--scd-bgd-color);
     padding: 3rem 2rem 4rem;
@@ -400,7 +400,7 @@ span {
     border: .2rem solid var(--bgd-color);
     height: 41rem;
     transition: .5s ease;
-} */
+}
 
 .skills-box i {
     font-size: 6rem;
