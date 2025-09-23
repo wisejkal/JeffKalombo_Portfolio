@@ -1210,7 +1210,8 @@ span {
   }
 
   .portfolio-container {
-    grid-template-columns: 1fr 1fr;
+    /* grid-template-columns: 1fr 1fr; */
+    grid-template-columns: repeat(2, 1fr);
     gap: 1.5rem;
      width: 100vw;
     overflow-x: hidden;
@@ -1220,9 +1221,9 @@ span {
     max-width: 100%;
     height: auto;
   }
-  .portfolio-container {
+  /* .portfolio-container {
     grid-template-columns: repeat(2, 1fr);
-  }
+  } */
 
     .portfolio-box {
     width: 100%;
