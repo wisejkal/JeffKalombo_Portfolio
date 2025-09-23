@@ -1170,6 +1170,12 @@ span {
     height: auto;
   }
 
+  .portfolio {
+    padding: 3rem 2rem 5rem;
+    background-color: var(--scd-bgd-color);
+    width: 100%;
+  }
+
   .portfolio-container {
     grid-template-columns: repeat(2, 1fr);
   }
