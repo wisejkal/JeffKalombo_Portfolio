@@ -361,7 +361,7 @@ span {
 }
 
 .skills-container {
-  /* display: grid; */
+  display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); 
   gap: 2rem;
   padding: 0 1rem;
@@ -1173,12 +1173,27 @@ span {
     height: auto;
   }
 
-  .portfolio {
+  /* .portfolio {
     padding: 3rem 2rem 5rem;
     background-color: var(--scd-bgd-color);
     width: 100%;
+  } */
+
+    .portfolio {
+    padding: 2rem 1rem;
+    width: 100vw;
+    overflow-x: hidden;
   }
 
+  .portfolio-container {
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+  }
+
+  .portfolio-box {
+    max-width: 100%;
+    height: auto;
+  }
   .portfolio-container {
     grid-template-columns: repeat(2, 1fr);
   }
