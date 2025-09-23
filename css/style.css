@@ -433,6 +433,7 @@ span {
   width: 100%;
     background: var(--scd-bgd-color);
     padding-bottom: 5rem;
+    
 }
 
 .portfolio h2 {
@@ -444,6 +445,7 @@ span {
     grid-template-columns: repeat(3, 1fr);
     align-items: center;
     gap: 3.5rem ;
+    overflow: hidden;/**/
 }
 
 .portfolio-container .portfolio-box {
@@ -1225,12 +1227,7 @@ span {
     grid-template-columns: repeat(2, 1fr);
   } */
 
-    .portfolio-box {
-    width: 100%;
-    height: auto;
-  }
-
-  .navbar {
+    .navbar {
     top: 6rem;
   }
 }
