@@ -365,7 +365,7 @@ span {
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); 
   gap: 2rem;
   padding: 0 1rem;
-  width: 100%; 
+   
 }
 
 .skills-container .skills-box {
