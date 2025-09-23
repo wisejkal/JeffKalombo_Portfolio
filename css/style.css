@@ -292,13 +292,16 @@ span {
 .btn:hover {
     box-shadow: 0 0 1rem var(--txt-color);
 }
+
 .about {
     display: flex;
+    width: 100%;
     justify-content: center;
     align-items: center;    
     gap: 2rem;
     background: var(--scd-bgd-color);
     text-align: justify;
+    min-height: 100dvh; 
 
 }
 
@@ -380,7 +383,9 @@ span {
 }
 
 .portfolio {
+  width: 100%;
     background: var(--scd-bgd-color);
+    padding-bottom: 5rem;
 }
 
 .portfolio h2 {
@@ -1082,6 +1087,11 @@ span {
 
   .portfolio-container {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+    .portfolio-box {
+    width: 100%;
+    height: auto;
   }
 
   .navbar {
