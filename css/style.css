@@ -27,6 +27,11 @@ html {
     overflow-x: hidden;
 }
 
+/* I added this part for reset  */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
 body {
     background: var(--bgd-color);
     color: var(--txt-color);
@@ -448,7 +453,7 @@ span {
     overflow: hidden;/**/
 }
 
-.portfolio-container .portfolio-box {
+/* .portfolio-container .portfolio-box {
     position: relative;
     border-radius: 2rem;
     box-shadow: 0 0 1rem var(--bgd-color);
@@ -458,7 +463,21 @@ span {
     width: 50rem;
     font-size: 8rem;
    
+} */
+
+.portfolio-container .portfolio-box {
+  position: relative;
+  border-radius: 2rem;
+  box-shadow: 0 0 1rem var(--bgd-color);
+  overflow: hidden;
+  display: flex;
+  height: 35rem;
+  width: 100%;          /* */
+  max-width: 100%;      /*  */
+  font-size: 8rem;
+  box-sizing: border-box;
 }
+
 
 .portfolio-box video,
 .portfolio-box img {
@@ -977,6 +996,7 @@ span {
         height: auto;
         font-size: 2.5rem;
         margin: 0 auto;
+        
     }
 
     .portfolio h2 {
@@ -1000,6 +1020,7 @@ span {
 
  .portfolio-container {
         grid-template-columns: 1fr;
+        gap: 1rem; /**/
     }
 
      .portfolio-box video {
@@ -1222,7 +1243,14 @@ span {
   .portfolio-box {
     max-width: 100%;
     height: auto;
+    font-size: 4rem;
   }
+
+  
+    /* .portfolio-container .portfolio-box {
+    height: auto;
+    font-size: 4rem; /* plus petit texte si nécessaire */
+  } */
   /* .portfolio-container {
     grid-template-columns: repeat(2, 1fr);
   } */
