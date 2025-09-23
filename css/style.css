@@ -1110,7 +1110,7 @@ span {
     min-height: 100dvh; /* Use dynamic viewport height */
     padding: 8rem 5% 2rem;
   }
-
+/* 
   .home {
     flex-direction: row;
     flex-wrap: wrap;
@@ -1129,6 +1129,31 @@ span {
     max-width: 250px;
     height: auto;
     margin-top: 0;
+  } */
+
+   .home {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 4rem; /* espace entre le texte et l’image */
+    padding: 2rem;
+  }
+
+  .home-content,
+  .home-img {
+    flex: 1 1 50%;
+    max-width: 50%;
+  }
+
+  .home-content h1,
+  .home-content h3,
+  .home-content p {
+    text-align: left;
+  }
+
+  .home-img img {
+    width: 100%;
+    max-width: 250px;
   }
 
   .about {
