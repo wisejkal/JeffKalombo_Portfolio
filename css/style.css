@@ -339,10 +339,33 @@ span {
     margin-bottom: 3.5rem;
 }
 
-.skills-container {
+/* .skills-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 2rem;
+} */
+
+/* .skills-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+    flex-wrap: wrap;
+    padding: 0 2rem;
+} */
+
+.skills {
+  width: 100%;
+  background: var(--scd-bgd-color);
+  padding-bottom: 5rem 0;
+}
+
+.skills-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); 
+  gap: 2rem;
+  padding: 0 1rem;
+  width: 100%; 
 }
 
 .skills-container .skills-box {
@@ -471,7 +494,9 @@ span {
 /* Ensure full width for background sections */
 .about,
 .skills,
-.portfolio {
+.portfolio,
+.contact,
+.footer {
     width: 100%;
 }
 
@@ -564,7 +589,7 @@ span {
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
-    padding: 2rem 9%;
+    padding: 2rem 5%;
     background: var(--scd-bgd-color);
 }
 
@@ -831,7 +856,11 @@ span {
     text-align: center;
   }
 
-  .skills-container {
+   .skills {
+    padding: 3rem 1rem;
+  }
+
+  /* .skills-container {
     flex-direction: column;
     gap: 2rem;
     padding: 0 1rem;
@@ -853,7 +882,32 @@ span {
   .skills-box p {
     font-size: 1.2rem;
   }
-    
+     */
+
+      .skills-container {
+    display: grid; /* ✅ Assure que c’est bien du grid */
+    grid-template-columns: 1fr; /* ✅ Une seule colonne sur mobile */
+    gap: 2rem;
+    padding: 0 1rem;
+    width: 100%;
+  }
+
+  .skills-container .skills-box {
+    padding: 2rem 1.5rem;
+  }
+
+  .skills-box i {
+    font-size: 5rem;
+  }
+
+  .skills-box h3 {
+    font-size: 2rem;
+  }
+
+  .skills-box p {
+    font-size: 1.2rem;
+  }
+
   .contact form {
     max-width: 100%;
     padding: 0 1rem;
@@ -1083,6 +1137,11 @@ span {
 
   .skills-container {
     grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem; /**/
+  }
+
+   .skills-box {
+    height: auto;
   }
 
   .portfolio-container {
