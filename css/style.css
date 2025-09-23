@@ -1150,7 +1150,10 @@ span {
   .home-content p {
     text-align: left;
   }
-
+.home-content h3 {
+    font-size: 2rem;
+    font-weight: 500;
+}
   .home-img img {
     width: 100%;
     max-width: 250px;
