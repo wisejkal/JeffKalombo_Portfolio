@@ -356,7 +356,7 @@ span {
 
 .skills {
   width: 100%;
-  background: var(--scd-bgd-color);
+  background: var(--bgd-bgd-color);
   padding-bottom: 5rem 0;
 }
 
@@ -885,8 +885,8 @@ span {
      */
 
       .skills-container {
-    display: grid; /* ✅ Assure que c’est bien du grid */
-    grid-template-columns: 1fr; /* ✅ Une seule colonne sur mobile */
+    display: grid; /*  */
+    grid-template-columns: 1fr; /*  */
     gap: 2rem;
     padding: 0 1rem;
     width: 100%;
