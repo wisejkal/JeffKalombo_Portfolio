@@ -1201,10 +1201,28 @@ span {
     font-size: 1rem;
     font-weight: 500;
 }
+
+/* added today*/
+  .home-img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
   .home-img img {
     width: 100%;
     max-width: 250px;
+    height: auto;
+    margin-top: 0;
   }
+
+  /* End added today */
+  
+ /* .home-img img {
+    width: 100%;
+    max-width: 250px;
+  }
+  */
 
   .about {
     flex-direction: row;
