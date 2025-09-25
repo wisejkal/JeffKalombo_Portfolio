@@ -1237,7 +1237,9 @@ span {
   }
 
    .skills-box {
-    height: auto;
+    /* height: auto; */
+    height: 35rem;
+    font-size: 3rem;
   }
 
   /* .portfolio {
