@@ -471,7 +471,7 @@ span {
   box-shadow: 0 0 1rem var(--bgd-color);
   overflow: hidden;
   display: flex;
-  height: 35rem;
+  height: 19rem;
   width: 100%;          /* */
   max-width: 100%;      /*  */
   font-size: 8rem;
@@ -483,7 +483,7 @@ span {
 .portfolio-box img {
     width: 100%;
     height: auto;
-    object-fit: cover;
+    object-fit:cover;
 }
 
 .portfolio-box img {
@@ -1188,7 +1188,7 @@ span {
 
   .home-content,
   .home-img {
-    flex: 1 1 50%;
+    flex: 1 1 25%; /* */
     max-width: 50%;
   }
 
@@ -1198,7 +1198,7 @@ span {
     text-align: left;
   }
 .home-content h3 {
-    font-size: 2rem;
+    font-size: 1rem;
     font-weight: 500;
 }
   .home-img img {
