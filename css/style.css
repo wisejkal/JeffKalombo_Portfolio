@@ -1183,7 +1183,7 @@ span {
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    gap: 4rem; /* espace entre le texte et l’image */
+    gap: 4rem; 
     padding: 2rem;
     font-size: 1rem;
   }
