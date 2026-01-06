@@ -130,7 +130,7 @@ document.addEventListener('DOMContentLoaded', () => {
         `Thank you.`
       );
 
-      const email = 'youremail@example.com'; // Replace with your email
+      const email = 'wisejkal@hotmail.com'; 
       const mailtoLink = `mailto:${email}?subject=${subject}&body=${body}`;
 
       messageBox.classList.add('show');
