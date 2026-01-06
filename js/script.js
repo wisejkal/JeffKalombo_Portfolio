@@ -97,29 +97,87 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // ===== SECTION 5 : CV Request Form =====
-  // Get elements
+  const showFormBtn = document.getElementById('show-form-btn');
+  const cvForm = document.getElementById('cv-form');
+  const cancelBtn = document.getElementById('cancel-btn');
+  const messageBox = document.getElementById('message-box');
+
+  if (showFormBtn && cvForm && cancelBtn && messageBox) {
+    showFormBtn.addEventListener('click', () => {
+      cvForm.style.display = 'block';
+      showFormBtn.style.display = 'none';
+    });
+
+    cancelBtn.addEventListener('click', () => {
+      cvForm.reset();
+      cvForm.style.display = 'none';
+      showFormBtn.style.display = 'inline-block';
+    });
+
+    cvForm.addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      const fullName = document.getElementById('fullName').value.trim();
+      const company = document.getElementById('company').value.trim();
+      const position = document.getElementById('position').value.trim();
+
+      const subject = encodeURIComponent('Request for CV');
+      const body = encodeURIComponent(
+        `Hello,\n\nI would like to request your CV. Here are my details:\n\n` +
+        `Name of the person: ${fullName}\n` +
+        `Company: ${company}\n` +
+        `Position in the company: ${position}\n\n` +
+        `Thank you.`
+      );
+
+      const email = 'wisejkal@hotmail.com'; 
+      const mailtoLink = `mailto:${email}?subject=${subject}&body=${body}`;
+
+      messageBox.classList.add('show');
+
+      setTimeout(() => {
+        messageBox.classList.remove('show');
+
+        // Generate PDF
+        // const { jsPDF } = window.jspdf;
+        // const doc = new jsPDF();
+        // doc.setFontSize(12);
+        // doc.text("CV Request Form", 20, 20);
+        // doc.text(`Full Name: ${fullName}`, 20, 40);
+        // doc.text(`Company: ${company}`, 20, 50);
+        // doc.text(`Position: ${position}`, 20, 60);
+        // doc.save("cv-request.pdf");
+
+        // Open mailto
+        window.location.href = mailtoLink;
+
+        // Reset form
+        // cvForm.reset();
+        // cvForm.style.display = 'none';
+        // showFormBtn.style.display = 'inline-block';
+      }, 5000);
+    });
+  }
+});
+
 const showFormBtn = document.getElementById('show-form-btn');
 const cvForm = document.getElementById('cv-form');
 const cancelBtn = document.getElementById('cancel-btn');
 const messageBox = document.getElementById('message-box');
 
-// Safety check
-if (!showFormBtn || !cvForm || !cancelBtn || !messageBox) return;
-
-// Show form
+// Show form and hide main button
 showFormBtn.addEventListener('click', () => {
   cvForm.style.display = 'block';
   showFormBtn.style.display = 'none';
 });
 
-// Cancel form
+// Cancel button resets form and shows main button
 cancelBtn.addEventListener('click', () => {
   cvForm.reset();
   cvForm.style.display = 'none';
   showFormBtn.style.display = 'inline-block';
 });
 
-// Submit form
 cvForm.addEventListener('submit', function (e) {
   e.preventDefault();
 
@@ -127,79 +185,101 @@ cvForm.addEventListener('submit', function (e) {
   const company = document.getElementById('company').value.trim();
   const position = document.getElementById('position').value.trim();
 
-  // Generate reference ID
+  // ✅ Generate random reference ID
   const referenceID = 'REF-' + Math.random().toString(36).substring(2, 8).toUpperCase();
 
-  // Mailto content
+  // ✅ Include referenceID in the subject
   const subject = encodeURIComponent(`Request for CV - ${referenceID}`);
   const body = encodeURIComponent(
-    `Hello,\n\n` +
-    `I would like to request your CV. Below are my details:\n\n` +
-    `Reference ID : ${referenceID}\n` +
-    `Full Name     : ${fullName}\n` +
-    `Company       : ${company}\n` +
-    `Position      : ${position}\n\n` +
-    `Best regards,\n${fullName}`
+    
+      `Hello,\n\n` +
+      `I would like to request your CV. Below are my details:\n\n` +
+      `Reference ID : ${referenceID}\n\n` +
+      `Full Name     : ${fullName}\n` +
+      `Company       : ${company}\n` +
+      `Position      : ${position}\n\n` +
+      `Looking forward to your response.\n\n` +
+      `Best regards,\n` +
+      `${fullName}`
   );
 
-  const email = 'wisejkal@hotmail.com';
+  const email = 'wisejkal@hotmail.com'; // my email
   const mailtoLink = `mailto:${email}?subject=${subject}&body=${body}`;
 
-  // Show confirmation message
+  // ✅ Show message for 5 seconds
   messageBox.classList.add('show');
 
   setTimeout(() => {
     messageBox.classList.remove('show');
 
-    // ✅ Generate ONE PDF
+    // ✅ Generate PDF
     const { jsPDF } = window.jspdf;
+    // const doc = new jsPDF();
+    // doc.setFontSize(12);
+    // doc.text("CV Request Form", 20, 20);
+    // doc.text(`Reference ID: ${referenceID}`, 20, 30);
+    // doc.text(`Full Name: ${fullName}`, 20, 50);
+    // doc.text(`Company: ${company}`, 20, 60);
+    // doc.text(`Position: ${position}`, 20, 70);
+    // doc.save(`cv-request-${referenceID}.pdf`);
+  
     const doc = new jsPDF();
 
-    doc.setFontSize(22);
-    doc.setFont(undefined, 'bold');
-    doc.text(`Reference ID: ${referenceID}`, 105, 30, { align: 'center' });
+// 📌 Top Reference ID Header
+doc.setFontSize(22);
+doc.setFont(undefined, 'bold');
+doc.text(`Reference ID: ${referenceID}`, 105, 30, { align: 'center' });
 
-    const now = new Date();
-    const dateString = now.toLocaleDateString();
-    const timeString = now.toLocaleTimeString();
+// 📆 Date & Time
+const now = new Date();
+const dateString = now.toLocaleDateString();
+const timeString = now.toLocaleTimeString();
 
-    const yourName = "Jeff Kalombo";
+// 📝 Response Letter (center of page)
+const yourName = "Jeff Kalombo"; // Replace with my real name
 
-    const responseLines = [
-      `Thank you ${fullName} for your interest in my CV.`,
-      "I will review your request and respond shortly.",
-      "",
-      "Please keep your request reference for future correspondence.",
-      "",
-      "Best regards,",
-      yourName,
-      `Sent on: ${dateString} at ${timeString}`
-    ];
+const responseLines = [
+  `Thank you ${fullName} for your interest in my CV.`,
+  "I will review your request and respond shortly.",
+  "",
+  "Please keep your request reference for any future correspondence.",
+  "Feel free to reach out anytime via the contact form on my portfolio.",
+  "",
+  "Best regards,",
+  yourName,
+  `Sent on: ${dateString} at ${timeString}`
+];
 
-    doc.setFontSize(12);
-    doc.setFont(undefined, 'normal');
+// Set font for response
+doc.setFontSize(12);
+doc.setFont(undefined, 'normal');
 
-    const lineHeight = 10;
-    let y = 80;
+// Calculate vertical start position to center the block
+const lineHeight = 10;
+const contentHeight = responseLines.length * lineHeight;
+const pageHeight = doc.internal.pageSize.getHeight();
+let y = (pageHeight - contentHeight) / 2;
 
-    responseLines.forEach(line => {
-      doc.text(line, 105, y, { align: 'center' });
-      y += lineHeight;
-    });
+// Write each line centered
+responseLines.forEach(line => {
+  doc.text(line, 105, y, { align: 'center' });
+  y += lineHeight;
+});
 
-    // ✅ Save ONLY ONCE
-    doc.save(`cv-request-${referenceID}.pdf`);
+// 💾 Save the PDF
+doc.save(`cv-request-${referenceID}.pdf`);
 
-    // ✅ Open mail client ONLY ONCE
+
+    // ✅ Open mailto
     window.location.href = mailtoLink;
 
-    // Reset form
+    // ✅ Reset form and show button
     cvForm.reset();
     cvForm.style.display = 'none';
     showFormBtn.style.display = 'inline-block';
-
   }, 5000);
 });
+
 
 
 // ==================== SECTION 6: Play Video on Hover ====================
