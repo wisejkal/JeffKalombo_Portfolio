@@ -128,23 +128,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
    
       // Mail sample to send
-      const email = `wisejkal@hotmail.com`;
+      
       const subject = encodeURIComponent('Request for CV');
       const body = encodeURIComponent(
-        // `Hello,\n\nI would like to request your CV. Below are my details:\n\n` +
-        // `Reference ID : ${referenceID}\n\n` +
-        // `Full Name    : ${fullName}\n` +
-        // `Company      : ${company}\n` +
-        // `Position     : ${position}\n\n` +
-        // `Thank you.\n\n` +
-        // `Best regards,\n` +
-        // `${fullName}`
+        `Hello,\n\nI would like to request your CV. Below are my details:\n\n` +
+        `Reference ID : ${referenceID}\n\n` +
+        `Full Name    : ${fullName}\n` +
+        `Company      : ${company}\n` +
+        `Position     : ${position}\n\n` +
+        `Thank you.\n\n` +
+        `Best regards,\n\n` +
+        `${fullName}`
       );
 
-      
+      const email = `wisejkal@hotmail.com`;
       const mailtoLink = `mailto:${email}?subject=${subject}&body=${body}`;
       
-      // Show confirmation message for 5 seconds
+      // Show confirmation message 
       messageBox.classList.add('show');
 
       setTimeout(() => {
