@@ -139,22 +139,22 @@ document.addEventListener('DOMContentLoaded', () => {
         messageBox.classList.remove('show');
 
         // Generate PDF
-        const { jsPDF } = window.jspdf;
-        const doc = new jsPDF();
-        doc.setFontSize(12);
-        doc.text("CV Request Form", 20, 20);
-        doc.text(`Full Name: ${fullName}`, 20, 40);
-        doc.text(`Company: ${company}`, 20, 50);
-        doc.text(`Position: ${position}`, 20, 60);
-        doc.save("cv-request.pdf");
+        // const { jsPDF } = window.jspdf;
+        // const doc = new jsPDF();
+        // doc.setFontSize(12);
+        // doc.text("CV Request Form", 20, 20);
+        // doc.text(`Full Name: ${fullName}`, 20, 40);
+        // doc.text(`Company: ${company}`, 20, 50);
+        // doc.text(`Position: ${position}`, 20, 60);
+        // doc.save("cv-request.pdf");
 
         // Open mailto
         window.location.href = mailtoLink;
 
         // Reset form
-        cvForm.reset();
-        cvForm.style.display = 'none';
-        showFormBtn.style.display = 'inline-block';
+        // cvForm.reset();
+        // cvForm.style.display = 'none';
+        // showFormBtn.style.display = 'inline-block';
       }, 5000);
     });
   }
@@ -203,7 +203,7 @@ cvForm.addEventListener('submit', function (e) {
       `${fullName}`
   );
 
-  const email = 'youremail@example.com'; // Replace with your email
+  const email = 'wisejkal@hotmail.com'; // my email
   const mailtoLink = `mailto:${email}?subject=${subject}&body=${body}`;
 
   // ✅ Show message for 5 seconds
@@ -237,10 +237,10 @@ const timeString = now.toLocaleTimeString();
 
 
 // 📝 Response Letter (center of page)
-const yourName = "Jeff Kalombo"; // Replace with your real name
+const yourName = "Jeff Kalombo"; // Replace with my real name
 
 const responseLines = [
-  `Thank you, ${fullName}, for your interest in my CV.`,
+  `Thank you ${fullName} for your interest in my CV.`,
   "I will review your request and respond shortly.",
   "",
   "Please keep your request reference for any future correspondence.",
